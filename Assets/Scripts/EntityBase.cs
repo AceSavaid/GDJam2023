@@ -24,7 +24,7 @@ public class EntityBase : MonoBehaviour
     }
 
 
-    void Hurt(int damage)
+    public void Hurt(int damage)
     {
         health -= damage;
         if (health <= 0)

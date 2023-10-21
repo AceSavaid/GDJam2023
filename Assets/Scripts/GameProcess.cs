@@ -15,8 +15,8 @@ public class GameProcess : MonoBehaviour
     bool newTurn = false;
     int playerPawnCount;
     int enemyPawnCount;
-    List<EntityBase> activePlayerParty = new List<EntityBase>();
-    List<EntityBase> activeEnemyParty = new List<EntityBase>();
+    [SerializeField] List<EntityBase> activePlayerParty = new List<EntityBase>();
+    [SerializeField] List<EntityBase> activeEnemyParty = new List<EntityBase>();
 
     [SerializeField] List<CardSO> cards = new List<CardSO>();
     [SerializeField] List<CardSO> enemyCards = new List<CardSO>();
@@ -27,7 +27,7 @@ public class GameProcess : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        Attack();
     }
 
     // Update is called once per frame
@@ -38,7 +38,9 @@ public class GameProcess : MonoBehaviour
 
     void Attack()
     {
-
+        activePlayerParty[0].Hurt(activeEnemyParty[0].damage);
+        activeEnemyParty[0].Hurt(activePlayerParty[0].damage);
+        Debug.Log(activePlayerParty[0].name + "did " + activePlayerParty[0].damage);
     }
 
     public void CheckWin()
