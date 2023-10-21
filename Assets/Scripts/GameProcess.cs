@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class GameProcess : MonoBehaviour
 {
-    [Header("Spwan Points")]
+    [Header("Spawn Points")]
     [SerializeField] GameObject pSpawn;
     private List<Transform> PlayerSpawnPoints = new List<Transform>();
     [SerializeField] GameObject eSpawn;
