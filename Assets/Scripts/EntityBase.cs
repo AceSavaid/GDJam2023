@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EntityBase : MonoBehaviour
 {
-    public bool isEnemy = false;
+    [SerializeField] private bool isEnemy = false;
     public int health = 5;
     public int maxhealth = 5;
     public int damage= 2;
@@ -36,5 +36,6 @@ public class EntityBase : MonoBehaviour
     void Die()
     {
         //does animatic effect and then calls the game manager
+        
     }
 }
