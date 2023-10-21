@@ -11,6 +11,4 @@ public class CardSO : ScriptableObject
     [SerializeField] public int damage = 5;
     [SerializeField] public Image image = null;
     [SerializeField][TextArea(3, 10)] public string description = "Description";
-
-
 }
