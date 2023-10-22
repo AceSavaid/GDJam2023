@@ -175,6 +175,7 @@ public class GameProcess : MonoBehaviour
         sacrificeMode = !sacrificeMode;
         Debug.Log("Sacrifice Mode is " +  sacrificeMode);
     }
+    
     void Sacrifice()
     {
 

@@ -10,12 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 6060511309779643077}
   - component: {fileID: 786324176123560287}
-  - component: {fileID: -6034398156426358232}
+  - component: {fileID: 8928097839415119549}
   - component: {fileID: 6759313425387665952}
-  - component: {fileID: 6245183928705486843}
-  - component: {fileID: 2814293949540173073}
+  - component: {fileID: 9068354250648685149}
+  - component: {fileID: 4060448737580430694}
   m_Layer: 5
-  m_Name: Death
+  m_Name: Justice
   m_TagString: Card
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33,7 +33,7 @@ RectTransform:
   m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_ConstrainProportionsScale: 1
   m_Children:
-  - {fileID: 6305568406561000484}
+  - {fileID: 2970272611465908729}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -49,7 +49,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4655964597964326881}
   m_CullTransparentMesh: 1
---- !u!212 &-6034398156426358232
+--- !u!212 &8928097839415119549
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -113,12 +113,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a76aa69d27e5fd43b27860b256a2c10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isEnemy: 0
-  cardData: {fileID: 11400000, guid: 840fcf7463b7f5646b1ef89ef23d40d6, type: 2}
+  isEnemy: 1
+  cardData: {fileID: 11400000, guid: 54042fbcf44c64047871e99549b61622, type: 2}
   health: 5
   maxhealth: 5
   damage: 2
---- !u!114 &6245183928705486843
+--- !u!114 &9068354250648685149
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -132,9 +132,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardData: {fileID: 0}
   image: {fileID: 0}
-  text: {fileID: 7857679388072632963}
-  gameMananger: {fileID: 1754924115905229764, guid: d19c85f49ba9e2745b7150ea93b01a73, type: 3}
---- !u!61 &2814293949540173073
+  text: {fileID: 1420168769908227934}
+--- !u!61 &4060448737580430694
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -179,7 +178,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5.3, y: 7.23}
   m_EdgeRadius: 0
---- !u!1001 &7474842542104665749
+--- !u!1001 &1802178229069513544
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -276,15 +275,10 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 50ebd20dcdde86646bf4acc281ace9ad, type: 3}
---- !u!224 &6305568406561000484 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 3475117270984741553, guid: 50ebd20dcdde86646bf4acc281ace9ad, type: 3}
-  m_PrefabInstance: {fileID: 7474842542104665749}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &7857679388072632963 stripped
+--- !u!114 &1420168769908227934 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 772345851708849174, guid: 50ebd20dcdde86646bf4acc281ace9ad, type: 3}
-  m_PrefabInstance: {fileID: 7474842542104665749}
+  m_PrefabInstance: {fileID: 1802178229069513544}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
@@ -292,3 +286,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!224 &2970272611465908729 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 3475117270984741553, guid: 50ebd20dcdde86646bf4acc281ace9ad, type: 3}
+  m_PrefabInstance: {fileID: 1802178229069513544}
+  m_PrefabAsset: {fileID: 0}

@@ -112,7 +112,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a76aa69d27e5fd43b27860b256a2c10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isEnemy: 0
+  isEnemy: 1
   cardData: {fileID: 11400000, guid: 65b6234ba8dfdee4abe7cff4c9f245de, type: 2}
   health: 5
   maxhealth: 5
@@ -132,7 +132,6 @@ MonoBehaviour:
   cardData: {fileID: 0}
   image: {fileID: 0}
   text: {fileID: 0}
-  gameMananger: {fileID: 1754924115905229764, guid: d19c85f49ba9e2745b7150ea93b01a73, type: 3}
 --- !u!61 &3910619522756924578
 BoxCollider2D:
   m_ObjectHideFlags: 0

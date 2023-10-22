@@ -10,12 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 6060511309779643077}
   - component: {fileID: 786324176123560287}
-  - component: {fileID: -6571557876234574642}
+  - component: {fileID: 7089433366390058543}
   - component: {fileID: 6759313425387665952}
-  - component: {fileID: -6569480324487244575}
-  - component: {fileID: 3910619522756924578}
+  - component: {fileID: 1384948222223424016}
+  - component: {fileID: 5206220662993252136}
   m_Layer: 5
-  m_Name: The Hanged Man
+  m_Name: The Hermit
   m_TagString: Card
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -48,7 +48,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4655964597964326881}
   m_CullTransparentMesh: 1
---- !u!212 &-6571557876234574642
+--- !u!212 &7089433366390058543
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -112,12 +112,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a76aa69d27e5fd43b27860b256a2c10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isEnemy: 0
-  cardData: {fileID: 11400000, guid: 65b6234ba8dfdee4abe7cff4c9f245de, type: 2}
+  isEnemy: 1
+  cardData: {fileID: 11400000, guid: cb8d19d8b83264a4bab597fdcef2fd10, type: 2}
   health: 5
   maxhealth: 5
   damage: 2
---- !u!114 &-6569480324487244575
+--- !u!114 &1384948222223424016
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -132,8 +132,7 @@ MonoBehaviour:
   cardData: {fileID: 0}
   image: {fileID: 0}
   text: {fileID: 0}
-  gameMananger: {fileID: 1754924115905229764, guid: d19c85f49ba9e2745b7150ea93b01a73, type: 3}
---- !u!61 &3910619522756924578
+--- !u!61 &5206220662993252136
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

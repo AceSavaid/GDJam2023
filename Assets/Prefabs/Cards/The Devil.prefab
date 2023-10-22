@@ -133,6 +133,7 @@ MonoBehaviour:
   cardData: {fileID: 0}
   image: {fileID: 0}
   text: {fileID: 3657653963646538385}
+  gameMananger: {fileID: 1754924115905229764, guid: d19c85f49ba9e2745b7150ea93b01a73, type: 3}
 --- !u!61 &2534413443020849275
 BoxCollider2D:
   m_ObjectHideFlags: 0
