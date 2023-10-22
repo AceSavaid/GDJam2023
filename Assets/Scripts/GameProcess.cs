@@ -28,6 +28,16 @@ public class GameProcess : MonoBehaviour
     [SerializeField] Button startTurnButton;
     [SerializeField] Button sacrificeButton;
 
+    [Header("Colour Effects")]
+    [SerializeField] Color hitColour;
+    [SerializeField] Color deathColour;
+
+    [Header("Sound Effects")]
+    [SerializeField] AudioClip nextTurnSound;
+    [SerializeField] AudioClip attackSound;
+    [SerializeField] AudioClip playerDeathSound;
+    [SerializeField] AudioClip enemyDeathSound;
+
 
     // Start is called before the first frame update
     void Start()
@@ -36,15 +46,30 @@ public class GameProcess : MonoBehaviour
         startTurnButton.enabled = true;
         startTurnButton.onClick.AddListener(NextTurn);
 
+        //creates the list of spawn points
+        foreach (Transform child in pSpawn.transform)
+        {
+            PlayerSpawnPoints.Add(child);
+        }
+        foreach (Transform child in eSpawn.transform)
+        {
+            EnemySpawnPoints.Add(child);
+        }
 
         //spawns both the player and enemy sides of the board (should remove the player's one for the custom later)
         foreach (Transform t in PlayerSpawnPoints)
         {
-            activePlayerParty.Add(Instantiate(cards[Random.Range(0, cards.Count-1)], t));
+            GameObject g = Instantiate(cards[Random.Range(0, cards.Count)], t);
+            activePlayerParty.Add(g);
+            Debug.Log("Spawning Player Card" + g);
+
         }
+
         foreach (Transform t in EnemySpawnPoints)
         {
-            activeEnemyParty.Add(Instantiate(enemyCards[Random.Range(0, enemyCards.Count-1)], t));
+            GameObject g = Instantiate(enemyCards[Random.Range(0, enemyCards.Count)], t);
+            activeEnemyParty.Add(g);
+            Debug.Log("Spawning Enemy Card" + g);
         }
         
     }
@@ -120,11 +145,17 @@ public class GameProcess : MonoBehaviour
     void NextTurn() //for button call
     {
         newTurn = true;
+        Debug.Log("New Turn");
     }
 
     void Sacrifice()
     {
 
+    }
+
+    void PlaySoundEffect(AudioClip sound)
+    {
+        AudioSource.PlayClipAtPoint(sound,this.transform.position);
     }
 
     IEnumerator TurnTimer()// this was when the turn would trigger every 2 seconds for testing
