@@ -148,18 +148,21 @@ public class GameProcess : MonoBehaviour
             newTurn = false;
             startTurnButton.enabled= false;
             Debug.Log("Draw");
+            SceneManager.LoadScene("Win");
         }
         else if (activePlayerParty.Count <= 0) // enemy wins
         {
             newTurn = false;
             startTurnButton.enabled = false;
             Debug.Log("Enemy Wins");
+            SceneManager.LoadScene("Lose");
         }
         else if (activeEnemyParty.Count <= 0) // player wins 
         {
             newTurn = false;
             startTurnButton.enabled = false;
             Debug.Log("Player Wins");
+            SceneManager.LoadScene("Win");
         }
 
         //if none of these conditions it just continues 
