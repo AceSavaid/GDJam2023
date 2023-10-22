@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6759313425387665952}
   - component: {fileID: -3050838789966015469}
   - component: {fileID: 6271582038576507419}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Temperance
   m_TagString: Card
   m_Icon: {fileID: 0}
@@ -134,6 +134,7 @@ MonoBehaviour:
   image: {fileID: 0}
   text: {fileID: 8842610379401000354}
   gameMananger: {fileID: 1754924115905229764, guid: d19c85f49ba9e2745b7150ea93b01a73, type: 3}
+  ogPos: {x: 0, y: 0, z: 0}
 --- !u!61 &6271582038576507419
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -190,6 +191,10 @@ PrefabInstance:
     - target: {fileID: 2523892880861783713, guid: 50ebd20dcdde86646bf4acc281ace9ad, type: 3}
       propertyPath: m_Name
       value: CardContent
+      objectReference: {fileID: 0}
+    - target: {fileID: 2523892880861783713, guid: 50ebd20dcdde86646bf4acc281ace9ad, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3475117270984741553, guid: 50ebd20dcdde86646bf4acc281ace9ad, type: 3}
       propertyPath: m_Pivot.x
@@ -270,6 +275,10 @@ PrefabInstance:
     - target: {fileID: 3475117270984741553, guid: 50ebd20dcdde86646bf4acc281ace9ad, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7097514236171136206, guid: 50ebd20dcdde86646bf4acc281ace9ad, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
