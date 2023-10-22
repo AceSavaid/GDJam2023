@@ -15,6 +15,7 @@ public class GameProcess : MonoBehaviour
     bool newTurn = false;
     float timeBetweenTurns = 2.0f;
 
+    //Party information for both sides
     [SerializeField] List<EntityBase> activePlayerParty = new List<EntityBase>();
     [SerializeField] List<EntityBase> activeEnemyParty = new List<EntityBase>();
 
@@ -45,37 +46,46 @@ public class GameProcess : MonoBehaviour
         activePlayerParty[0].Hurt(activeEnemyParty[0].damage);
         activeEnemyParty[0].Hurt(activePlayerParty[0].damage);
         Debug.Log(activePlayerParty[0].name + "did " + activePlayerParty[0].damage);
+        Debug.Log(activeEnemyParty[0].name + "did" + activeEnemyParty[0].damage);
 
         newTurn = false;
         StartCoroutine(TurnTimer());
     }
 
-    public void CheckWin()
+    public void CheckGameEnd() //Checks to see if any of the condition 
     {
-        if ((activePlayerParty.Count <= 0) && (activeEnemyParty.Count <= 0)) 
+        
+        if ((activePlayerParty.Count <= 0) && (activeEnemyParty.Count <= 0)) //draw
         {
-
+            newTurn = false;
+            Debug.Log("Draw");
         }
-        else if (activePlayerParty.Count <= 0)
+        else if (activePlayerParty.Count <= 0) // enemy wins
         {
-
+            newTurn = false;
+            Debug.Log("Enemy Wins");
         }
-        else
+        else if (activeEnemyParty.Count <= 0) // player wins 
         {
-
+            newTurn = false;
+            Debug.Log("Player Wins");
         }
+
+        //if none of these conditions 
     }
 
     public void playerPawnDied()
     {
         activePlayerParty.RemoveAt(1);
         Debug.Log("Player Died.");
+        CheckGameEnd();
     }
 
     public void enemyPawnDied()
     {
         activeEnemyParty.RemoveAt(1);
         Debug.Log("Enemy Died.");
+        CheckGameEnd();
     }
 
     IEnumerator TurnTimer()
