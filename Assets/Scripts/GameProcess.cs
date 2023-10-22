@@ -16,7 +16,7 @@ public class GameProcess : MonoBehaviour
     bool newTurn = false;
     float timeBetweenTurns = 2.0f;
 
-    bool sacrificeMode = false;
+    public bool sacrificeMode = false;
 
     //Party information for both sides
     [SerializeField] List<GameObject> activePlayerParty = new List<GameObject>();
@@ -39,6 +39,8 @@ public class GameProcess : MonoBehaviour
     [SerializeField] AudioClip attackSound;
     [SerializeField] AudioClip playerDeathSound;
     [SerializeField] AudioClip enemyDeathSound;
+    [SerializeField] AudioClip sacrificeOnSound;
+    [SerializeField] AudioClip sacrificeOffSound;
 
 
     // Start is called before the first frame update
@@ -61,13 +63,14 @@ public class GameProcess : MonoBehaviour
         }
 
         //spawns both the player and enemy sides of the board (should remove the player's one for the custom later)
+        /*
         foreach (Transform t in PlayerSpawnPoints)
         {
             GameObject g = Instantiate(cards[Random.Range(0, cards.Count)], t);
             activePlayerParty.Add(g);
             Debug.Log("Spawning Player Card" + g);
 
-        }
+        }*/
 
         foreach (Transform t in EnemySpawnPoints)
         {
@@ -155,35 +158,52 @@ public class GameProcess : MonoBehaviour
     {
         activePlayerParty.RemoveAt(0);
         Debug.Log("Player Pawn Died.");
-        
+        PlaySoundEffect(playerDeathSound);
+
+
     }
 
     public void enemyPawnDied() //if an enemy pawn dies
     {
         activeEnemyParty.RemoveAt(0);
         Debug.Log("Enemy Pawn Died.");
+        PlaySoundEffect(enemyDeathSound);
     }
     
     void NextTurn() //for button call
     {
         newTurn = true;
         Debug.Log("New Turn");
+        PlaySoundEffect(nextTurnSound);
     }
 
     void ToggleSacrificeMode()
     {
         sacrificeMode = !sacrificeMode;
         Debug.Log("Sacrifice Mode is " +  sacrificeMode);
+        if (sacrificeMode)
+        {
+            PlaySoundEffect(sacrificeOnSound);
+        }
+        else
+        {
+            PlaySoundEffect(sacrificeOffSound);
+        }
     }
     
     void Sacrifice()
     {
+        activeEnemyParty[0].GetComponent<EntityBase>().Hurt(Random.Range(1,15));
 
     }
 
     void PlaySoundEffect(AudioClip sound)
     {
-        AudioSource.PlayClipAtPoint(sound,this.transform.position);
+        if (sound)
+        {
+            AudioSource.PlayClipAtPoint(sound, this.transform.position);
+        }
+        
     }
 
     IEnumerator TurnTimer()// this was when the turn would trigger every 2 seconds for testing
