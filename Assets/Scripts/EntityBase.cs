@@ -18,13 +18,6 @@ public class EntityBase : MonoBehaviour
         
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-
     public void Hurt(int damage)
     {
         health -= damage;
@@ -37,6 +30,15 @@ public class EntityBase : MonoBehaviour
     void Die()
     {
         //does animatic effect and then calls the game manager
+        if (isEnemy)
+        {
+            gameObject.GetComponent<GameProcess>().enemyPawnDied();
+        }
+        else
+        {
+            gameObject.GetComponent<GameProcess>().playerPawnDied();
+        }
+        Destroy(this);
         
     }
 }

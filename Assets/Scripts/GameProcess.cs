@@ -11,13 +11,14 @@ public class GameProcess : MonoBehaviour
     [SerializeField] GameObject eSpawn;
     List<Transform> EnemySpawnPoints = new List<Transform>();
 
-
+    [Header("Turn Handling")]
     bool newTurn = false;
-    int playerPawnCount;
-    int enemyPawnCount;
+    float timeBetweenTurns = 2.0f;
+
     [SerializeField] List<EntityBase> activePlayerParty = new List<EntityBase>();
     [SerializeField] List<EntityBase> activeEnemyParty = new List<EntityBase>();
 
+    [Header("Cards")]
     [SerializeField] List<CardSO> cards = new List<CardSO>();
     [SerializeField] List<CardSO> enemyCards = new List<CardSO>();
 
@@ -33,7 +34,10 @@ public class GameProcess : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (newTurn)
+        {
+            Attack();
+        }
     }
 
     void Attack()
@@ -41,15 +45,18 @@ public class GameProcess : MonoBehaviour
         activePlayerParty[0].Hurt(activeEnemyParty[0].damage);
         activeEnemyParty[0].Hurt(activePlayerParty[0].damage);
         Debug.Log(activePlayerParty[0].name + "did " + activePlayerParty[0].damage);
+
+        newTurn = false;
+        StartCoroutine(TurnTimer());
     }
 
     public void CheckWin()
     {
-        if ((playerPawnCount <= 0) && (enemyPawnCount <= 0)) 
+        if ((activePlayerParty.Count <= 0) && (activeEnemyParty.Count <= 0)) 
         {
 
         }
-        else if (PlayerSpawnPoints.Count <= 0)
+        else if (activePlayerParty.Count <= 0)
         {
 
         }
@@ -57,5 +64,24 @@ public class GameProcess : MonoBehaviour
         {
 
         }
+    }
+
+    public void playerPawnDied()
+    {
+        activePlayerParty.RemoveAt(1);
+        Debug.Log("Player Died.");
+    }
+
+    public void enemyPawnDied()
+    {
+        activeEnemyParty.RemoveAt(1);
+        Debug.Log("Enemy Died.");
+    }
+
+    IEnumerator TurnTimer()
+    {
+        yield return new WaitForSeconds(timeBetweenTurns);
+        newTurn = true;
+        Debug.Log("New Turn");
     }
 }
