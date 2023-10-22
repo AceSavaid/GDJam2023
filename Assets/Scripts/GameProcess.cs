@@ -81,7 +81,7 @@ public class GameProcess : MonoBehaviour
         {
             GameObject g = Instantiate(enemyCards[Random.Range(0, enemyCards.Count)], t);
             activeEnemyParty.Add(g);
-            g.transform.localScale = new Vector3(30, 30, 1.0f);
+            g.transform.localScale = new Vector3(20, 20, 1.0f);
             Debug.Log("Spawning Enemy Card" + g);
         }
         
@@ -113,7 +113,7 @@ public class GameProcess : MonoBehaviour
         GameObject g = Instantiate(card, PlayerSpawnPoints[activePlayerParty.Count]);
         activePlayerParty.Add(g);
         Destroy(g.GetComponent<Rigidbody2D>());
-        g.transform.localScale = new Vector3(30, 30, 1.0f);
+        g.transform.localScale = new Vector3(20, 20, 1.0f);
         g.transform.localRotation = Quaternion.identity;
         g.transform.localPosition = PlayerSpawnPoints[activePlayerParty.Count].position;
         
@@ -149,20 +149,21 @@ public class GameProcess : MonoBehaviour
             newTurn = false;
             startTurnButton.enabled= false;
             Debug.Log("Draw");
-            SceneManager.LoadScene("Win");
+            messageText.text = ("Player Won");
         }
         else if (activePlayerParty.Count <= 0) // enemy wins
         {
             newTurn = false;
             startTurnButton.enabled = false;
-            Debug.Log("Enemy Wins");
-            SceneManager.LoadScene("Lose");
+            messageText.text = ("Enemy Won");
+
         }
         else if (activeEnemyParty.Count <= 0) // player wins 
         {
             newTurn = false;
             startTurnButton.enabled = false;
             Debug.Log("Player Wins");
+            messageText.text = ("Player Won");
             SceneManager.LoadScene("Win");
         }
 
