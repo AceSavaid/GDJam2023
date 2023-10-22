@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEditor.Build.Content;
 
 public class CardBehaviour : MonoBehaviour
 {
@@ -13,14 +14,19 @@ public class CardBehaviour : MonoBehaviour
     [SerializeField] GameObject gameMananger;
 
     [SerializeField] Vector3 ogPos;
+
     Vector3 mousePos = new Vector3();
 
     bool isColliding = false;
 
+
     private void Awake()
     {
+        gameMananger = FindObjectOfType<GameProcess>().gameObject;
         cardData = GetComponent<EntityBase>();
         text.text = "Name: \n" + cardData.name + "\nHealth: " + cardData.health + "\n Damage:" +cardData.damage;
+
+        
     }
 
     void Start()
@@ -35,6 +41,7 @@ public class CardBehaviour : MonoBehaviour
         mousePos.z = -Camera.main.transform.position.z;
 
         mousePos = Camera.main.ScreenToWorldPoint(mousePos);
+
     }
 
     void OnMouseDrag()
@@ -50,18 +57,27 @@ public class CardBehaviour : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter2D(Collision2D col)
+    
+   
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         isColliding = true;
 
         Debug.Log("test");
 
-        if(Input.GetMouseButtonUp(0))
+        
+    }
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (Input.GetMouseButtonUp(0))
         {
-            if(gameMananger.GetComponent<GameProcess>().IsPartyFull() == false)
+            Debug.Log("Mouse Up");
+            if (gameMananger.GetComponent<GameProcess>().IsPartyFull() == false)
             {
+                Debug.Log("Party not full");
                 gameMananger.GetComponent<GameProcess>().AddToParty(this.gameObject);
                 Destroy(gameObject);
+
             }
             else
             {

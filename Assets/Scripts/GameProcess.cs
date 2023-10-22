@@ -31,6 +31,7 @@ public class GameProcess : MonoBehaviour
     [SerializeField] Button startTurnButton;
     [SerializeField] Button sacrificeButton;
     [SerializeField] TMP_Text messageText;
+    [SerializeField] public RectTransform cardDropArea;
 
     [Header("Colour Effects")]
     [SerializeField] Color hitColour;

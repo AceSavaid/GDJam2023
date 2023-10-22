@@ -546,6 +546,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4821777136033997358}
     - target: {fileID: 250531855209713885, guid: d19c85f49ba9e2745b7150ea93b01a73, type: 3}
+      propertyPath: cardDropArea
+      value: 
+      objectReference: {fileID: 4821777136033997359}
+    - target: {fileID: 250531855209713885, guid: d19c85f49ba9e2745b7150ea93b01a73, type: 3}
       propertyPath: sacrificeButton
       value: 
       objectReference: {fileID: 1616394389}
@@ -822,6 +826,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!224 &4821777136033997359 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 2651893791293115671, guid: f87dc1829b7fcda4c8a81ae42f2ddf0a, type: 3}
+  m_PrefabInstance: {fileID: 4821777136033997357}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

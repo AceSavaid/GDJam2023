@@ -136,6 +136,7 @@ MonoBehaviour:
   text: {fileID: 3488931403272369580}
   gameMananger: {fileID: 1754924115905229764, guid: d19c85f49ba9e2745b7150ea93b01a73, type: 3}
   ogPos: {x: 0, y: 0, z: 0}
+  collisionArea: {fileID: 0}
 --- !u!61 &5206220662993252136
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -165,7 +166,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
