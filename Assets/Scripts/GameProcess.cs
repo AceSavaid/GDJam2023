@@ -113,6 +113,9 @@ public class GameProcess : MonoBehaviour
         GameObject g = Instantiate(card, PlayerSpawnPoints[activePlayerParty.Count]);
         activePlayerParty.Add(g);
         g.transform.localScale = new Vector3(30, 30, 1.0f);
+        g.transform.localRotation = Quaternion.identity;
+        g.transform.localPosition = PlayerSpawnPoints[activePlayerParty.Count].position;
+        Destroy(g.GetComponent<Rigidbody2D>());
     }
 
     void Attack()
