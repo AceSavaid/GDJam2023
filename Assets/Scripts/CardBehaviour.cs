@@ -54,6 +54,15 @@ public class CardBehaviour : MonoBehaviour
         if(isColliding == false)
         {
             transform.position = ogPos;
+        } else
+        {
+            Debug.Log("__ Mouse Up");
+            if (gameMananger.GetComponent<GameProcess>().IsPartyFull() == false)
+            {
+                Debug.Log("Party not full");
+                gameMananger.GetComponent<GameProcess>().AddToParty(this.gameObject);
+                Destroy(gameObject);
+            }
         }
     }
 

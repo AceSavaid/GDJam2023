@@ -97,7 +97,7 @@ public class GameProcess : MonoBehaviour
 
     public bool IsPartyFull()
     {
-        if(activeEnemyParty.Count >= 4) { 
+        if(activePlayerParty.Count >= 4) { 
             return true;
         }
         else
@@ -109,7 +109,7 @@ public class GameProcess : MonoBehaviour
 
     public void AddToParty(GameObject card)
     {
-        GameObject g = Instantiate(card, PlayerSpawnPoints[activePlayerParty.Count-1]);
+        GameObject g = Instantiate(card, PlayerSpawnPoints[activePlayerParty.Count]);
         activePlayerParty.Add(g);
     }
 

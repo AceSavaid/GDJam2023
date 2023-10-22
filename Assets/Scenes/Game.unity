@@ -305,6 +305,7 @@ GameObject:
   - component: {fileID: 1101888505}
   - component: {fileID: 1101888504}
   - component: {fileID: 1101888503}
+  - component: {fileID: 1101888506}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -386,6 +387,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1101888506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1101888502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f94fae2b942909488bfd41105cca016, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effectMaterial: {fileID: 2100000, guid: b713630e255436d4fb10ea17549dc7d4, type: 2}
+  UseEffect: 1
 --- !u!1 &1331305279
 GameObject:
   m_ObjectHideFlags: 0
@@ -807,6 +822,14 @@ PrefabInstance:
     - target: {fileID: 4941554060254841548, guid: f87dc1829b7fcda4c8a81ae42f2ddf0a, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5563571503808906813, guid: f87dc1829b7fcda4c8a81ae42f2ddf0a, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1101888504}
+    - target: {fileID: 5563571503808906813, guid: f87dc1829b7fcda4c8a81ae42f2ddf0a, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5563571503808906813, guid: f87dc1829b7fcda4c8a81ae42f2ddf0a, type: 3}
       propertyPath: m_AdditionalShaderChannelsFlag
