@@ -80,6 +80,7 @@ public class GameProcess : MonoBehaviour
         {
             GameObject g = Instantiate(enemyCards[Random.Range(0, enemyCards.Count)], t);
             activeEnemyParty.Add(g);
+            g.transform.localScale = new Vector3(30, 30, 1.0f);
             Debug.Log("Spawning Enemy Card" + g);
         }
         
@@ -111,6 +112,7 @@ public class GameProcess : MonoBehaviour
     {
         GameObject g = Instantiate(card, PlayerSpawnPoints[activePlayerParty.Count]);
         activePlayerParty.Add(g);
+        g.transform.localScale = new Vector3(30, 30, 1.0f);
     }
 
     void Attack()
