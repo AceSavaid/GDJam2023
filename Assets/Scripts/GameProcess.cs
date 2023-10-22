@@ -89,8 +89,7 @@ public class GameProcess : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-        
+    {   
         if (newTurn)
         {
             Attack();
@@ -135,6 +134,8 @@ public class GameProcess : MonoBehaviour
         else { 
             Debug.LogWarning("Attacking without pawns");
         }
+
+        CheckGameEnd();
 
         newTurn = false;
         //StartCoroutine(TurnTimer());
