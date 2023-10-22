@@ -5,6 +5,7 @@ using UnityEngine;
 public class EntityBase : MonoBehaviour
 {
     [SerializeField] private bool isEnemy = false;
+    [SerializeField] CardSO cardData;
     public int health = 5;
     public int maxhealth = 5;
     public int damage= 2;
