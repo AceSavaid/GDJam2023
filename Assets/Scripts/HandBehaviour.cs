@@ -20,7 +20,9 @@ public class HandBehaviour : MonoBehaviour
 
     [SerializeField] private GameObject playerHand;
 
-    int shift = -20;
+    int horiShift = 2;
+    float roShift = -2;
+    float vertShift = 1;
 
     // Start is called before the first frame update
     void Start()
@@ -68,8 +70,28 @@ public class HandBehaviour : MonoBehaviour
 
         for(int i = 0; i <= 7; i++)
         {
-            Instantiate(Deck[i], playerHand.transform);
-            shift += 5;
+            Instantiate(Deck[i], new Vector3(-5.3f + horiShift, -5 + vertShift, 0), Quaternion.Euler(new Vector3(0, 0, 22 + roShift)));
+            horiShift += 1;
+            roShift -= 5.5f;
+
+            switch(i)
+            {
+                case < 2:
+                    vertShift += 0.25f;
+                    break;
+                case 2:
+                    vertShift = 1.60f;
+                    break;
+                case 3:
+                    roShift = -25.5f;
+                    break;
+                case 4:
+                    vertShift = 1.5f;
+                    break;
+                case > 4:
+                    vertShift -= 0.25f;
+                    break;
+            }
         }
 
         foreach( var x in Deck) {
