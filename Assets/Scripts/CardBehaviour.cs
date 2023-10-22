@@ -18,15 +18,13 @@ public class CardBehaviour : MonoBehaviour
     Vector3 mousePos = new Vector3();
 
     bool isColliding = false;
-
+    public bool inDeck = false;
 
     private void Awake()
     {
         gameMananger = FindObjectOfType<GameProcess>().gameObject;
         cardData = GetComponent<EntityBase>();
         text.text = "Name: \n" + cardData.name + "\nHealth: " + cardData.health + "\n Damage:" +cardData.damage;
-
-        
     }
 
     void Start()
@@ -46,7 +44,10 @@ public class CardBehaviour : MonoBehaviour
 
     void OnMouseDrag()
     {
-        transform.position = new Vector3(mousePos.x, mousePos.y, 0);
+        if(inDeck == true)
+        {
+            transform.position = new Vector3(mousePos.x, mousePos.y, 0);
+        }
     }
 
     void OnMouseUp()
@@ -59,14 +60,13 @@ public class CardBehaviour : MonoBehaviour
             Debug.Log("__ Mouse Up");
             if (gameMananger.GetComponent<GameProcess>().IsPartyFull() == false)
             {
+                inDeck = false;
                 Debug.Log("Party not full");
                 gameMananger.GetComponent<GameProcess>().AddToParty(this.gameObject);
                 Destroy(gameObject);
             }
         }
-    }
-
-    
+    }   
    
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -86,7 +86,6 @@ public class CardBehaviour : MonoBehaviour
                 Debug.Log("Party not full");
                 gameMananger.GetComponent<GameProcess>().AddToParty(this.gameObject);
                 Destroy(gameObject);
-
             }
             else
             {
@@ -95,5 +94,11 @@ public class CardBehaviour : MonoBehaviour
         }
     }
 
-    
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (Input.GetMouseButtonUp(0))
+        {
+            transform.position = ogPos;
+        }
+    }
 }

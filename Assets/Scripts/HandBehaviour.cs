@@ -36,34 +36,42 @@ public class HandBehaviour : MonoBehaviour
                 case <= 25: // 1
                     Deck.Add(Cards[0]);
                     Debug.Log("Death");
+                    Deck[Deck.Count-1].GetComponent<CardBehaviour>().inDeck = true;
                     break;
                 case > 25 and <= 35: // 2
                     Deck.Add(Cards[1]);
                     Debug.Log("Justice");
+                    Deck[Deck.Count-1].GetComponent<CardBehaviour>().inDeck = true;
                     break;
                 case > 35 and <= 40: // 3
                     Deck.Add(Cards[2]);
                     Debug.Log("Strength");
+                    Deck[Deck.Count-1].GetComponent<CardBehaviour>().inDeck = true;
                     break;
                 case > 40 and <= 60: // 4
                     Deck.Add(Cards[3]);
                     Debug.Log("Temperance");
+                    Deck[Deck.Count-1].GetComponent<CardBehaviour>().inDeck = true;
                     break;
                 case > 60 and <= 70: // 5
                     Deck.Add(Cards[4]);
                     Debug.Log("The Devil");
+                    Deck[Deck.Count-1].GetComponent<CardBehaviour>().inDeck = true;
                     break;
                 case > 70 and <= 90: // 6
                     Deck.Add(Cards[5]);
                     Debug.Log("The Fool");
+                    Deck[Deck.Count-1].GetComponent<CardBehaviour>().inDeck = true;
                     break;
                 case > 90 and <= 99: // 7
                     Deck.Add(Cards[6]);
                     Debug.Log("The Hanged Man");
+                    Deck[Deck.Count-1].GetComponent<CardBehaviour>().inDeck = true;
                     break;
                 case 100: // 8
                     Deck.Add(Cards[7]);
                     Debug.Log("The Hermit");
+                    Deck[Deck.Count-1].GetComponent<CardBehaviour>().inDeck = true;
                     break;
             }
         }
