@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 786324176123560287}
   - component: {fileID: 979718476518063995}
   - component: {fileID: 6759313425387665952}
+  - component: {fileID: -3050838789966015469}
   m_Layer: 5
   m_Name: Temperance
-  m_TagString: Untagged
+  m_TagString: Card
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -116,3 +117,15 @@ MonoBehaviour:
   maxhealth: 5
   damage: 2
   positionOrder: 0
+--- !u!114 &-3050838789966015469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4655964597964326881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0e9723674a6c8f49a1f9a66cda9ebb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
