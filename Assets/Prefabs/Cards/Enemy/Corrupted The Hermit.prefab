@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1384948222223424016}
   - component: {fileID: 5206220662993252136}
   m_Layer: 5
-  m_Name: The Hermit
+  m_Name: Corrupted The Hermit
   m_TagString: Card
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

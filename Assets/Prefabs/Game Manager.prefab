@@ -58,7 +58,15 @@ MonoBehaviour:
   - {fileID: 4655964597964326881, guid: 281740e2bb3557c43be077ad1a970fce, type: 3}
   - {fileID: 4655964597964326881, guid: 32ae9cc906be803439d1aaa3b6e9ac29, type: 3}
   - {fileID: 4655964597964326881, guid: 7616fbc7d9fe6444aa904d46a01d3e5c, type: 3}
-  enemyCards: []
+  enemyCards:
+  - {fileID: 4655964597964326881, guid: 8170333f7d0683b48a1dab9f7b433e78, type: 3}
+  - {fileID: 4655964597964326881, guid: 72b00c9fb8cee7d43ae4856bbf8748f8, type: 3}
+  - {fileID: 4655964597964326881, guid: 0014d7c816cbeb249ab5776f1d52c79b, type: 3}
+  - {fileID: 4655964597964326881, guid: 98fcd726368b1cc4689166bd1ff07e97, type: 3}
+  - {fileID: 4655964597964326881, guid: 0992c23ed9d03e841b3422a19cfc29da, type: 3}
+  - {fileID: 4655964597964326881, guid: 2bc6465755c02b0499169ea63f3d908e, type: 3}
+  - {fileID: 4655964597964326881, guid: 8dc9c4e1b6a52b54d976ffe337808251, type: 3}
+  - {fileID: 4655964597964326881, guid: 5dde4437b0737ce44863ea457a3879f1, type: 3}
   startTurnButton: {fileID: 0}
   sacrificeButton: {fileID: 0}
   hitColour: {r: 0.8301887, g: 0, b: 0, a: 1}
