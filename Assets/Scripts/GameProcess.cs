@@ -88,14 +88,22 @@ public class GameProcess : MonoBehaviour
         }
     }
 
-    public void IsPartyFull()
+    public bool IsPartyFull()
     {
-
+        if(activeEnemyParty.Count >= 4) { 
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+        
     }
 
-    public void AddToParty()
+    public void AddToParty(GameObject card)
     {
-
+        GameObject g = Instantiate(card, PlayerSpawnPoints[activePlayerParty.Count-1]);
+        activePlayerParty.Add(g);
     }
 
     void Attack()
