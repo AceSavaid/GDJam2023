@@ -479,7 +479,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f94fae2b942909488bfd41105cca016, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  effectMaterial: {fileID: 2100000, guid: b713630e255436d4fb10ea17549dc7d4, type: 2}
+  effectMaterial: {fileID: 2100000, guid: c68e0a6f1e935204484f165ef01104c6, type: 2}
   UseEffect: 1
 --- !u!1 &1331305279
 GameObject:
