@@ -50,7 +50,7 @@ public class CardBehaviour : MonoBehaviour
         }
     }
 
-    void OnColliderEnter(Collider2D col)
+    void OnCollisionEnter2D(Collision2D col)
     {
         isColliding = true;
 

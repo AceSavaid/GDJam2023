@@ -642,6 +642,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sacrifice Button
       objectReference: {fileID: 0}
+    - target: {fileID: 2396847802277535858, guid: f87dc1829b7fcda4c8a81ae42f2ddf0a, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3737294156796453445, guid: f87dc1829b7fcda4c8a81ae42f2ddf0a, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 190
@@ -657,6 +661,14 @@ PrefabInstance:
     - target: {fileID: 4480641511224908290, guid: f87dc1829b7fcda4c8a81ae42f2ddf0a, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 4564170015164093642, guid: f87dc1829b7fcda4c8a81ae42f2ddf0a, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4941554060254841548, guid: f87dc1829b7fcda4c8a81ae42f2ddf0a, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5563571503808906813, guid: f87dc1829b7fcda4c8a81ae42f2ddf0a, type: 3}
       propertyPath: m_AdditionalShaderChannelsFlag
@@ -677,6 +689,10 @@ PrefabInstance:
     - target: {fileID: 6360108510613101834, guid: f87dc1829b7fcda4c8a81ae42f2ddf0a, type: 3}
       propertyPath: m_Name
       value: Start Turn Button
+      objectReference: {fileID: 0}
+    - target: {fileID: 6609693781057630835, guid: f87dc1829b7fcda4c8a81ae42f2ddf0a, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6812060821344438098, guid: f87dc1829b7fcda4c8a81ae42f2ddf0a, type: 3}
       propertyPath: m_AnchoredPosition.x
