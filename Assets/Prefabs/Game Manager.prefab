@@ -69,11 +69,13 @@ MonoBehaviour:
   - {fileID: 4655964597964326881, guid: 5dde4437b0737ce44863ea457a3879f1, type: 3}
   startTurnButton: {fileID: 0}
   sacrificeButton: {fileID: 0}
+  messageText: {fileID: 0}
   hitColour: {r: 0.8301887, g: 0, b: 0, a: 1}
   deathColour: {r: 0.01886791, g: 0.01886791, b: 0.01886791, a: 1}
   nextTurnSound: {fileID: 8300000, guid: b68f7d05cae1f4846a7ec14cf2e1e102, type: 3}
   attackSound: {fileID: 8300000, guid: 18656d0fcb18a144f8ef2eb0647a1ae7, type: 3}
   playerDeathSound: {fileID: 8300000, guid: 3b75331dd9256c943afaeedf01a9ac25, type: 3}
   enemyDeathSound: {fileID: 8300000, guid: c2d949ecd88644d49b6ebcd1114d866b, type: 3}
-  sacrificeOnSound: {fileID: 0}
-  sacrificeOffSound: {fileID: 0}
+  sacrificeOnSound: {fileID: 8300000, guid: ee275de3d79561145b3c1c0052015e03, type: 3}
+  sacrificeOffSound: {fileID: 8300000, guid: f759cf3440442304bb335d4416068a44, type: 3}
+  sacrificeMadeSound: {fileID: 8300000, guid: 4d56c90eefae27945901a1eb76ce174a, type: 3}

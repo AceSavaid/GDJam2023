@@ -43,6 +43,7 @@ public class GameProcess : MonoBehaviour
     [SerializeField] AudioClip enemyDeathSound;
     [SerializeField] AudioClip sacrificeOnSound;
     [SerializeField] AudioClip sacrificeOffSound;
+    [SerializeField] AudioClip sacrificeMadeSound;
 
 
     // Start is called before the first frame update
@@ -117,11 +118,11 @@ public class GameProcess : MonoBehaviour
         if (activePlayerParty.Count > 0 && activePlayerParty.Count > 0)
         {
             activePlayerParty[0].GetComponent<EntityBase>().Hurt(activeEnemyParty[0].GetComponent<EntityBase>().damage);
-            Debug.Log(activeEnemyParty[0].name + "did" + activeEnemyParty[0].GetComponent<EntityBase>().damage);
-
             activeEnemyParty[0].GetComponent<EntityBase>().Hurt(activePlayerParty[0].GetComponent<EntityBase>().damage);
-            Debug.Log(activePlayerParty[0].name + "did " + activePlayerParty[0].GetComponent<EntityBase>().damage);
-            
+
+            messageText.text =
+               (activeEnemyParty[0].name + " did " + activeEnemyParty[0].GetComponent<EntityBase>().damage + ". "
+               + activePlayerParty[0].name + "did " + activePlayerParty[0].GetComponent<EntityBase>().damage);
         }
         else { 
             Debug.LogWarning("Attacking without pawns");
@@ -159,7 +160,7 @@ public class GameProcess : MonoBehaviour
     public void playerPawnDied() //if a player pawn dies, remove it from the list
     {
         activePlayerParty.RemoveAt(0);
-        Debug.Log("Player Pawn Died.");
+        messageText.text = ("Player Pawn Died.");
         PlaySoundEffect(playerDeathSound);
 
 
@@ -168,35 +169,41 @@ public class GameProcess : MonoBehaviour
     public void enemyPawnDied() //if an enemy pawn dies
     {
         activeEnemyParty.RemoveAt(0);
-        Debug.Log("Enemy Pawn Died.");
+        messageText.text = ("Enemy Pawn Died.");
         PlaySoundEffect(enemyDeathSound);
     }
     
     void NextTurn() //for button call
     {
         newTurn = true;
-        Debug.Log("New Turn");
+        messageText.text = ("New Turn");
         PlaySoundEffect(nextTurnSound);
     }
 
     void ToggleSacrificeMode()
     {
         sacrificeMode = !sacrificeMode;
-        Debug.Log("Sacrifice Mode is " +  sacrificeMode);
+        
         if (sacrificeMode)
         {
+            messageText.text = ("Sacrifice Mode is On.");
             PlaySoundEffect(sacrificeOnSound);
         }
         else
         {
+            messageText.text = ("Sacrifice Mode is Off.");
             PlaySoundEffect(sacrificeOffSound);
         }
     }
     
+    public bool CanSacrifice()
+    {
+        return sacrificeMode;
+    }
     void Sacrifice()
     {
         activeEnemyParty[0].GetComponent<EntityBase>().Hurt(Random.Range(1,15));
-
+        sacrificeMode = false;
     }
 
     void PlaySoundEffect(AudioClip sound)
