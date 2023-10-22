@@ -46,6 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pSpawn: {fileID: 0}
   eSpawn: {fileID: 0}
+  sacrificeMode: 0
   activePlayerParty: []
   activeEnemyParty: []
   cards:
@@ -53,10 +54,28 @@ MonoBehaviour:
   - {fileID: 4655964597964326881, guid: 1d728b96add35c74b8ac592ab9958902, type: 3}
   - {fileID: 4655964597964326881, guid: feb8483edb01cbb4f9c4cea758a13066, type: 3}
   - {fileID: 4655964597964326881, guid: 4ee97b511dfc4844ebf2d0c83ee9cca5, type: 3}
-  enemyCards:
   - {fileID: 4655964597964326881, guid: 54af24a2c39213e49b6edf40dbe280d6, type: 3}
   - {fileID: 4655964597964326881, guid: 281740e2bb3557c43be077ad1a970fce, type: 3}
   - {fileID: 4655964597964326881, guid: 32ae9cc906be803439d1aaa3b6e9ac29, type: 3}
   - {fileID: 4655964597964326881, guid: 7616fbc7d9fe6444aa904d46a01d3e5c, type: 3}
+  enemyCards:
+  - {fileID: 4655964597964326881, guid: 8170333f7d0683b48a1dab9f7b433e78, type: 3}
+  - {fileID: 4655964597964326881, guid: 72b00c9fb8cee7d43ae4856bbf8748f8, type: 3}
+  - {fileID: 4655964597964326881, guid: 0014d7c816cbeb249ab5776f1d52c79b, type: 3}
+  - {fileID: 4655964597964326881, guid: 98fcd726368b1cc4689166bd1ff07e97, type: 3}
+  - {fileID: 4655964597964326881, guid: 0992c23ed9d03e841b3422a19cfc29da, type: 3}
+  - {fileID: 4655964597964326881, guid: 2bc6465755c02b0499169ea63f3d908e, type: 3}
+  - {fileID: 4655964597964326881, guid: 8dc9c4e1b6a52b54d976ffe337808251, type: 3}
+  - {fileID: 4655964597964326881, guid: 5dde4437b0737ce44863ea457a3879f1, type: 3}
   startTurnButton: {fileID: 0}
   sacrificeButton: {fileID: 0}
+  messageText: {fileID: 0}
+  hitColour: {r: 0.8301887, g: 0, b: 0, a: 1}
+  deathColour: {r: 0.01886791, g: 0.01886791, b: 0.01886791, a: 1}
+  nextTurnSound: {fileID: 8300000, guid: b68f7d05cae1f4846a7ec14cf2e1e102, type: 3}
+  attackSound: {fileID: 8300000, guid: 18656d0fcb18a144f8ef2eb0647a1ae7, type: 3}
+  playerDeathSound: {fileID: 8300000, guid: 3b75331dd9256c943afaeedf01a9ac25, type: 3}
+  enemyDeathSound: {fileID: 8300000, guid: c2d949ecd88644d49b6ebcd1114d866b, type: 3}
+  sacrificeOnSound: {fileID: 8300000, guid: ee275de3d79561145b3c1c0052015e03, type: 3}
+  sacrificeOffSound: {fileID: 8300000, guid: f759cf3440442304bb335d4416068a44, type: 3}
+  sacrificeMadeSound: {fileID: 8300000, guid: 4d56c90eefae27945901a1eb76ce174a, type: 3}

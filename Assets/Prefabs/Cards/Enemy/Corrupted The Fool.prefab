@@ -10,13 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 6060511309779643077}
   - component: {fileID: 786324176123560287}
-  - component: {fileID: 3332760510427691136}
+  - component: {fileID: 7414710121850316149}
   - component: {fileID: 6759313425387665952}
-  - component: {fileID: 2725439226814310102}
-  - component: {fileID: 4097477950721078017}
-  - component: {fileID: 4337961669409684645}
-  m_Layer: 7
-  m_Name: Strength
+  - component: {fileID: 2036648736134035256}
+  - component: {fileID: 4842200026788321909}
+  m_Layer: 5
+  m_Name: Corrupted The Fool
   m_TagString: Card
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -34,7 +33,7 @@ RectTransform:
   m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_ConstrainProportionsScale: 1
   m_Children:
-  - {fileID: 420406566687963994}
+  - {fileID: 2098557873577251378}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -50,7 +49,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4655964597964326881}
   m_CullTransparentMesh: 1
---- !u!212 &3332760510427691136
+--- !u!212 &7414710121850316149
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -114,12 +113,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a76aa69d27e5fd43b27860b256a2c10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isEnemy: 0
-  cardData: {fileID: 11400000, guid: 0fa7c5518c748fe4c9c08695614a16c1, type: 2}
+  isEnemy: 1
+  cardData: {fileID: 11400000, guid: 87cd1078233e3be4b8763dec80a2fd24, type: 2}
   health: 5
   maxhealth: 5
   damage: 2
---- !u!114 &2725439226814310102
+--- !u!114 &2036648736134035256
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -133,10 +132,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardData: {fileID: 0}
   image: {fileID: 0}
-  text: {fileID: 4564505152994252285}
-  gameMananger: {fileID: 1754924115905229764, guid: d19c85f49ba9e2745b7150ea93b01a73, type: 3}
-  ogPos: {x: 0, y: 0, z: 0}
---- !u!61 &4097477950721078017
+  text: {fileID: 2851455379235093653}
+--- !u!61 &4842200026788321909
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -181,34 +178,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5.3, y: 7.23}
   m_EdgeRadius: 0
---- !u!50 &4337961669409684645
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4655964597964326881}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 1
-  m_Constraints: 0
---- !u!1001 &3886480264321542635
+--- !u!1001 &3253160214034448515
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -219,10 +189,6 @@ PrefabInstance:
     - target: {fileID: 2523892880861783713, guid: 50ebd20dcdde86646bf4acc281ace9ad, type: 3}
       propertyPath: m_Name
       value: CardContent
-      objectReference: {fileID: 0}
-    - target: {fileID: 2523892880861783713, guid: 50ebd20dcdde86646bf4acc281ace9ad, type: 3}
-      propertyPath: m_Layer
-      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3475117270984741553, guid: 50ebd20dcdde86646bf4acc281ace9ad, type: 3}
       propertyPath: m_Pivot.x
@@ -304,24 +270,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7097514236171136206, guid: 50ebd20dcdde86646bf4acc281ace9ad, type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 50ebd20dcdde86646bf4acc281ace9ad, type: 3}
---- !u!224 &420406566687963994 stripped
+--- !u!224 &2098557873577251378 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3475117270984741553, guid: 50ebd20dcdde86646bf4acc281ace9ad, type: 3}
-  m_PrefabInstance: {fileID: 3886480264321542635}
+  m_PrefabInstance: {fileID: 3253160214034448515}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4564505152994252285 stripped
+--- !u!114 &2851455379235093653 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 772345851708849174, guid: 50ebd20dcdde86646bf4acc281ace9ad, type: 3}
-  m_PrefabInstance: {fileID: 3886480264321542635}
+  m_PrefabInstance: {fileID: 3253160214034448515}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1

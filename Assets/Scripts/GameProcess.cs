@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class GameProcess : MonoBehaviour
 {
@@ -16,6 +17,8 @@ public class GameProcess : MonoBehaviour
     bool newTurn = false;
     float timeBetweenTurns = 2.0f;
 
+    public bool sacrificeMode = false;
+
     //Party information for both sides
     [SerializeField] List<GameObject> activePlayerParty = new List<GameObject>();
     [SerializeField] List<GameObject> activeEnemyParty = new List<GameObject>();
@@ -24,9 +27,10 @@ public class GameProcess : MonoBehaviour
     [SerializeField] List<GameObject> cards = new List<GameObject>();
     [SerializeField] List<GameObject> enemyCards = new List<GameObject>();
 
-    [Header("Buttons")]
+    [Header("Buttons and UI")]
     [SerializeField] Button startTurnButton;
     [SerializeField] Button sacrificeButton;
+    [SerializeField] TMP_Text messageText;
 
     [Header("Colour Effects")]
     [SerializeField] Color hitColour;
@@ -37,6 +41,9 @@ public class GameProcess : MonoBehaviour
     [SerializeField] AudioClip attackSound;
     [SerializeField] AudioClip playerDeathSound;
     [SerializeField] AudioClip enemyDeathSound;
+    [SerializeField] AudioClip sacrificeOnSound;
+    [SerializeField] AudioClip sacrificeOffSound;
+    [SerializeField] AudioClip sacrificeMadeSound;
 
 
     // Start is called before the first frame update
@@ -45,6 +52,8 @@ public class GameProcess : MonoBehaviour
         //enables the start button which is used to progress the actions
         startTurnButton.enabled = true;
         startTurnButton.onClick.AddListener(NextTurn);
+        sacrificeButton.enabled = true;
+        sacrificeButton.onClick.AddListener(ToggleSacrificeMode);
 
         //creates the list of spawn points
         foreach (Transform child in pSpawn.transform)
@@ -57,13 +66,14 @@ public class GameProcess : MonoBehaviour
         }
 
         //spawns both the player and enemy sides of the board (should remove the player's one for the custom later)
+        /*
         foreach (Transform t in PlayerSpawnPoints)
         {
             GameObject g = Instantiate(cards[Random.Range(0, cards.Count)], t);
             activePlayerParty.Add(g);
             Debug.Log("Spawning Player Card" + g);
 
-        }
+        }*/
 
         foreach (Transform t in EnemySpawnPoints)
         {
@@ -84,17 +94,35 @@ public class GameProcess : MonoBehaviour
         }
     }
 
+    public bool IsPartyFull()
+    {
+        if(activeEnemyParty.Count >= 4) { 
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+        
+    }
+
+    public void AddToParty(GameObject card)
+    {
+        GameObject g = Instantiate(card, PlayerSpawnPoints[activePlayerParty.Count-1]);
+        activePlayerParty.Add(g);
+    }
+
     void Attack()
     {
         //safety check 
-        if (activePlayerParty.Count > 0)
+        if (activePlayerParty.Count > 0 && activePlayerParty.Count > 0)
         {
             activePlayerParty[0].GetComponent<EntityBase>().Hurt(activeEnemyParty[0].GetComponent<EntityBase>().damage);
-            Debug.Log(activeEnemyParty[0].name + "did" + activeEnemyParty[0].GetComponent<EntityBase>().damage);
-
             activeEnemyParty[0].GetComponent<EntityBase>().Hurt(activePlayerParty[0].GetComponent<EntityBase>().damage);
-            Debug.Log(activePlayerParty[0].name + "did " + activePlayerParty[0].GetComponent<EntityBase>().damage);
-            
+
+            messageText.text =
+               (activeEnemyParty[0].name + " did " + activeEnemyParty[0].GetComponent<EntityBase>().damage + ". "
+               + activePlayerParty[0].name + "did " + activePlayerParty[0].GetComponent<EntityBase>().damage);
         }
         else { 
             Debug.LogWarning("Attacking without pawns");
@@ -132,30 +160,59 @@ public class GameProcess : MonoBehaviour
     public void playerPawnDied() //if a player pawn dies, remove it from the list
     {
         activePlayerParty.RemoveAt(0);
-        Debug.Log("Player Pawn Died.");
-        
+        messageText.text = ("Player Pawn Died.");
+        PlaySoundEffect(playerDeathSound);
+
+
     }
 
     public void enemyPawnDied() //if an enemy pawn dies
     {
         activeEnemyParty.RemoveAt(0);
-        Debug.Log("Enemy Pawn Died.");
+        messageText.text = ("Enemy Pawn Died.");
+        PlaySoundEffect(enemyDeathSound);
     }
     
     void NextTurn() //for button call
     {
         newTurn = true;
-        Debug.Log("New Turn");
+        messageText.text = ("New Turn");
+        PlaySoundEffect(nextTurnSound);
     }
 
+    void ToggleSacrificeMode()
+    {
+        sacrificeMode = !sacrificeMode;
+        
+        if (sacrificeMode)
+        {
+            messageText.text = ("Sacrifice Mode is On.");
+            PlaySoundEffect(sacrificeOnSound);
+        }
+        else
+        {
+            messageText.text = ("Sacrifice Mode is Off.");
+            PlaySoundEffect(sacrificeOffSound);
+        }
+    }
+    
+    public bool CanSacrifice()
+    {
+        return sacrificeMode;
+    }
     void Sacrifice()
     {
-
+        activeEnemyParty[0].GetComponent<EntityBase>().Hurt(Random.Range(1,15));
+        sacrificeMode = false;
     }
 
     void PlaySoundEffect(AudioClip sound)
     {
-        AudioSource.PlayClipAtPoint(sound,this.transform.position);
+        if (sound)
+        {
+            AudioSource.PlayClipAtPoint(sound, this.transform.position);
+        }
+        
     }
 
     IEnumerator TurnTimer()// this was when the turn would trigger every 2 seconds for testing

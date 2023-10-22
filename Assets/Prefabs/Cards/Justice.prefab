@@ -14,7 +14,8 @@ GameObject:
   - component: {fileID: 6759313425387665952}
   - component: {fileID: 9068354250648685149}
   - component: {fileID: 4060448737580430694}
-  m_Layer: 5
+  - component: {fileID: -7153963241402979877}
+  m_Layer: 7
   m_Name: Justice
   m_TagString: Card
   m_Icon: {fileID: 0}
@@ -133,6 +134,8 @@ MonoBehaviour:
   cardData: {fileID: 0}
   image: {fileID: 0}
   text: {fileID: 1420168769908227934}
+  gameMananger: {fileID: 1754924115905229764, guid: d19c85f49ba9e2745b7150ea93b01a73, type: 3}
+  ogPos: {x: 0, y: 0, z: 0}
 --- !u!61 &4060448737580430694
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -178,6 +181,33 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5.3, y: 7.23}
   m_EdgeRadius: 0
+--- !u!50 &-7153963241402979877
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4655964597964326881}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 0
 --- !u!1001 &1802178229069513544
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -189,6 +219,10 @@ PrefabInstance:
     - target: {fileID: 2523892880861783713, guid: 50ebd20dcdde86646bf4acc281ace9ad, type: 3}
       propertyPath: m_Name
       value: CardContent
+      objectReference: {fileID: 0}
+    - target: {fileID: 2523892880861783713, guid: 50ebd20dcdde86646bf4acc281ace9ad, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3475117270984741553, guid: 50ebd20dcdde86646bf4acc281ace9ad, type: 3}
       propertyPath: m_Pivot.x
@@ -269,6 +303,10 @@ PrefabInstance:
     - target: {fileID: 3475117270984741553, guid: 50ebd20dcdde86646bf4acc281ace9ad, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7097514236171136206, guid: 50ebd20dcdde86646bf4acc281ace9ad, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
