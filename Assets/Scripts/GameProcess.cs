@@ -88,6 +88,16 @@ public class GameProcess : MonoBehaviour
         }
     }
 
+    public void IsPartyFull()
+    {
+
+    }
+
+    public void AddToParty()
+    {
+
+    }
+
     void Attack()
     {
         //safety check 
