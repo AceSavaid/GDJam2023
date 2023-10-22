@@ -206,7 +206,7 @@ public class GameProcess : MonoBehaviour
     {
         return sacrificeMode;
     }
-    void Sacrifice()
+    public void Sacrifice()
     {
         activeEnemyParty[0].GetComponent<EntityBase>().Hurt(Random.Range(1,15));
         sacrificeMode = false;

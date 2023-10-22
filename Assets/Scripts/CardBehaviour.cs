@@ -44,6 +44,12 @@ public class CardBehaviour : MonoBehaviour
 
     void OnMouseDrag()
     {
+        if(gameMananger.GetComponent<GameProcess>().CanSacrifice() == true)
+        {
+            gameMananger.GetComponent<GameProcess>().Sacrifice();
+            Destroy(this.gameObject);
+        }
+
         if(inDeck == true)
         {
             transform.position = new Vector3(mousePos.x, mousePos.y, 0);
@@ -73,8 +79,6 @@ public class CardBehaviour : MonoBehaviour
         isColliding = true;
 
         Debug.Log("test");
-
-        
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
