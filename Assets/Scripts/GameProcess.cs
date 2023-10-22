@@ -4,6 +4,7 @@ using System.Data;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameProcess : MonoBehaviour
 {
@@ -112,10 +113,11 @@ public class GameProcess : MonoBehaviour
     {
         GameObject g = Instantiate(card, PlayerSpawnPoints[activePlayerParty.Count]);
         activePlayerParty.Add(g);
+        Destroy(g.GetComponent<Rigidbody2D>());
         g.transform.localScale = new Vector3(30, 30, 1.0f);
         g.transform.localRotation = Quaternion.identity;
         g.transform.localPosition = PlayerSpawnPoints[activePlayerParty.Count].position;
-        Destroy(g.GetComponent<Rigidbody2D>());
+        
     }
 
     void Attack()
@@ -168,7 +170,12 @@ public class GameProcess : MonoBehaviour
         activePlayerParty.RemoveAt(0);
         messageText.text = ("Player Pawn Died.");
         PlaySoundEffect(playerDeathSound);
+        for(int i = 0; i > activePlayerParty.Count; i++)
+        {
+            activePlayerParty[i].transform.position = PlayerSpawnPoints[i].position;
 
+        }
+        
 
     }
 
@@ -177,6 +184,12 @@ public class GameProcess : MonoBehaviour
         activeEnemyParty.RemoveAt(0);
         messageText.text = ("Enemy Pawn Died.");
         PlaySoundEffect(enemyDeathSound);
+
+        for (int i = 0; i > activeEnemyParty.Count; i++)
+        {
+            activeEnemyParty[i].transform.position = EnemySpawnPoints[i].position;
+
+        }
     }
     
     void NextTurn() //for button call
@@ -209,6 +222,7 @@ public class GameProcess : MonoBehaviour
     public void Sacrifice()
     {
         activeEnemyParty[0].GetComponent<EntityBase>().Hurt(Random.Range(1,15));
+        messageText.text = ("Sacrifice Has been made.");
         sacrificeMode = false;
     }
 
