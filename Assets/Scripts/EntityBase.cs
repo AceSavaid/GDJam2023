@@ -8,8 +8,7 @@ public class EntityBase : MonoBehaviour
     [SerializeField] CardSO cardData;
     public int health = 5;
     public int maxhealth = 5;
-    public int damage= 2;
-    private int positionOrder; 
+    public int damage = 2;
     
 
     // Start is called before the first frame update

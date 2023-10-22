@@ -10,12 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 6060511309779643077}
   - component: {fileID: 786324176123560287}
-  - component: {fileID: 7414710121850316149}
+  - component: {fileID: 3332760510427691136}
   - component: {fileID: 6759313425387665952}
-  - component: {fileID: 2036648736134035256}
-  - component: {fileID: 4842200026788321909}
+  - component: {fileID: 2725439226814310102}
+  - component: {fileID: 4097477950721078017}
   m_Layer: 5
-  m_Name: The Fool
+  m_Name: Corrupted Strength
   m_TagString: Card
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33,7 +33,7 @@ RectTransform:
   m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_ConstrainProportionsScale: 1
   m_Children:
-  - {fileID: 2098557873577251378}
+  - {fileID: 420406566687963994}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -49,7 +49,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4655964597964326881}
   m_CullTransparentMesh: 1
---- !u!212 &7414710121850316149
+--- !u!212 &3332760510427691136
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -114,11 +114,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isEnemy: 1
-  cardData: {fileID: 11400000, guid: 87cd1078233e3be4b8763dec80a2fd24, type: 2}
+  cardData: {fileID: 11400000, guid: 0fa7c5518c748fe4c9c08695614a16c1, type: 2}
   health: 5
   maxhealth: 5
   damage: 2
---- !u!114 &2036648736134035256
+--- !u!114 &2725439226814310102
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -132,8 +132,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardData: {fileID: 0}
   image: {fileID: 0}
-  text: {fileID: 2851455379235093653}
---- !u!61 &4842200026788321909
+  text: {fileID: 4564505152994252285}
+--- !u!61 &4097477950721078017
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -178,7 +178,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5.3, y: 7.23}
   m_EdgeRadius: 0
---- !u!1001 &3253160214034448515
+--- !u!1001 &3886480264321542635
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -275,15 +275,15 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 50ebd20dcdde86646bf4acc281ace9ad, type: 3}
---- !u!224 &2098557873577251378 stripped
+--- !u!224 &420406566687963994 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3475117270984741553, guid: 50ebd20dcdde86646bf4acc281ace9ad, type: 3}
-  m_PrefabInstance: {fileID: 3253160214034448515}
+  m_PrefabInstance: {fileID: 3886480264321542635}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2851455379235093653 stripped
+--- !u!114 &4564505152994252285 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 772345851708849174, guid: 50ebd20dcdde86646bf4acc281ace9ad, type: 3}
-  m_PrefabInstance: {fileID: 3253160214034448515}
+  m_PrefabInstance: {fileID: 3886480264321542635}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1

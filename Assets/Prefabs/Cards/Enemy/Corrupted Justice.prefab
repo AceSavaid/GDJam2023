@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 9068354250648685149}
   - component: {fileID: 4060448737580430694}
   m_Layer: 5
-  m_Name: Justice
+  m_Name: Corrupted Justice
   m_TagString: Card
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

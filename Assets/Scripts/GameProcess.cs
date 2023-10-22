@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class GameProcess : MonoBehaviour
 {
@@ -26,9 +27,10 @@ public class GameProcess : MonoBehaviour
     [SerializeField] List<GameObject> cards = new List<GameObject>();
     [SerializeField] List<GameObject> enemyCards = new List<GameObject>();
 
-    [Header("Buttons")]
+    [Header("Buttons and UI")]
     [SerializeField] Button startTurnButton;
     [SerializeField] Button sacrificeButton;
+    [SerializeField] TMP_Text messageText;
 
     [Header("Colour Effects")]
     [SerializeField] Color hitColour;

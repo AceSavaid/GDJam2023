@@ -10,12 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 6060511309779643077}
   - component: {fileID: 786324176123560287}
-  - component: {fileID: 979718476518063995}
+  - component: {fileID: 5399944764088430288}
   - component: {fileID: 6759313425387665952}
-  - component: {fileID: -3050838789966015469}
-  - component: {fileID: 6271582038576507419}
+  - component: {fileID: -2742553048696047854}
+  - component: {fileID: 2534413443020849275}
   m_Layer: 5
-  m_Name: Temperance
+  m_Name: Corrupted The Devil
   m_TagString: Card
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33,7 +33,7 @@ RectTransform:
   m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_ConstrainProportionsScale: 1
   m_Children:
-  - {fileID: 4628213331896048389}
+  - {fileID: 598816218701855798}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -49,7 +49,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4655964597964326881}
   m_CullTransparentMesh: 1
---- !u!212 &979718476518063995
+--- !u!212 &5399944764088430288
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -114,11 +114,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isEnemy: 1
-  cardData: {fileID: 11400000, guid: bf61ad3c1b7c7c044a60bd4d6a73c2d1, type: 2}
+  cardData: {fileID: 11400000, guid: e348547222bea6a4eb448cc871e72d56, type: 2}
   health: 5
   maxhealth: 5
   damage: 2
---- !u!114 &-3050838789966015469
+--- !u!114 &-2742553048696047854
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -132,8 +132,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardData: {fileID: 0}
   image: {fileID: 0}
-  text: {fileID: 8842610379401000354}
---- !u!61 &6271582038576507419
+  text: {fileID: 3657653963646538385}
+--- !u!61 &2534413443020849275
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -178,7 +178,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5.3, y: 7.23}
   m_EdgeRadius: 0
---- !u!1001 &8070643221421279668
+--- !u!1001 &4068286014595640967
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -275,15 +275,15 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 50ebd20dcdde86646bf4acc281ace9ad, type: 3}
---- !u!224 &4628213331896048389 stripped
+--- !u!224 &598816218701855798 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3475117270984741553, guid: 50ebd20dcdde86646bf4acc281ace9ad, type: 3}
-  m_PrefabInstance: {fileID: 8070643221421279668}
+  m_PrefabInstance: {fileID: 4068286014595640967}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &8842610379401000354 stripped
+--- !u!114 &3657653963646538385 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 772345851708849174, guid: 50ebd20dcdde86646bf4acc281ace9ad, type: 3}
-  m_PrefabInstance: {fileID: 8070643221421279668}
+  m_PrefabInstance: {fileID: 4068286014595640967}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
