@@ -16,6 +16,8 @@ public class GameProcess : MonoBehaviour
     bool newTurn = false;
     float timeBetweenTurns = 2.0f;
 
+    bool sacrificeMode = false;
+
     //Party information for both sides
     [SerializeField] List<GameObject> activePlayerParty = new List<GameObject>();
     [SerializeField] List<GameObject> activeEnemyParty = new List<GameObject>();
@@ -45,6 +47,8 @@ public class GameProcess : MonoBehaviour
         //enables the start button which is used to progress the actions
         startTurnButton.enabled = true;
         startTurnButton.onClick.AddListener(NextTurn);
+        sacrificeButton.enabled = true;
+        sacrificeButton.onClick.AddListener(ToggleSacrificeMode);
 
         //creates the list of spawn points
         foreach (Transform child in pSpawn.transform)
@@ -87,7 +91,7 @@ public class GameProcess : MonoBehaviour
     void Attack()
     {
         //safety check 
-        if (activePlayerParty.Count > 0)
+        if (activePlayerParty.Count > 0 && activePlayerParty.Count > 0)
         {
             activePlayerParty[0].GetComponent<EntityBase>().Hurt(activeEnemyParty[0].GetComponent<EntityBase>().damage);
             Debug.Log(activeEnemyParty[0].name + "did" + activeEnemyParty[0].GetComponent<EntityBase>().damage);
@@ -148,6 +152,11 @@ public class GameProcess : MonoBehaviour
         Debug.Log("New Turn");
     }
 
+    void ToggleSacrificeMode()
+    {
+        sacrificeMode = !sacrificeMode;
+        Debug.Log("Sacrifice Mode is " +  sacrificeMode);
+    }
     void Sacrifice()
     {
 
