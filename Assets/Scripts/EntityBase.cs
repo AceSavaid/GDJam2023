@@ -9,13 +9,18 @@ public class EntityBase : MonoBehaviour
     public int health = 5;
     public int maxhealth = 5;
     public int damage= 2;
-    public int positionOrder; 
+    private int positionOrder; 
     
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        if (cardData != null)
+        {
+            health = cardData.health;
+            maxhealth = cardData.health;
+            damage = cardData.damage;
+        }
     }
 
     public void Hurt(int damage)
@@ -32,13 +37,15 @@ public class EntityBase : MonoBehaviour
         //does animatic effect and then calls the game manager
         if (isEnemy)
         {
-            gameObject.GetComponent<GameProcess>().enemyPawnDied();
+            FindObjectOfType<GameProcess>().GetComponent<GameProcess>().enemyPawnDied();
         }
         else
         {
-            gameObject.GetComponent<GameProcess>().playerPawnDied();
+            FindObjectOfType<GameProcess>().GetComponent<GameProcess>().playerPawnDied();
         }
-        Destroy(this);
+        DestroyImmediate(this.gameObject,true);
         
     }
+
+    
 }

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6060511309779643077}
   - component: {fileID: 786324176123560287}
   - component: {fileID: 191304150981494159}
-  - component: {fileID: 6759313425387665952}
+  - component: {fileID: 7653081474996516727}
   m_Layer: 5
   m_Name: EntityBase
   m_TagString: Untagged
@@ -76,7 +76,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &6759313425387665952
+--- !u!114 &7653081474996516727
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -89,7 +89,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isEnemy: 0
+  cardData: {fileID: 0}
   health: 5
   maxhealth: 5
   damage: 2
-  positionOrder: 0
